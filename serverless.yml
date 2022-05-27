@@ -1,4 +1,4 @@
-service: node-in-aws-web
+service: task2new-auto
 
 frameworkVersion: '3'
 
@@ -17,7 +17,7 @@ plugins:
 
 custom:
   client:
-    bucketName: task2manual
+    bucketName: task2new-auto
     distributionFolder: build
   s3BucketName: ${self:custom.client.bucketName}
 
