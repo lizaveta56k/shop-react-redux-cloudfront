@@ -1,5 +1,19 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Task 2 Results
+
+Manual:
+ 1. [S3 Bucket](https://task2manual.s3.eu-west-1.amazonaws.com/index.html)
+ 2. [CloudFront Distribution](https://d4fv5599je8kg.cloudfront.net/)
+
+Auto:
+ 1. [S3 Bucket](https://task2new-auto.s3.amazonaws.com/index.html)
+ 2. [CloudFront Distribution](https://d1g8fnooz1re0.cloudfront.net/)
+
+![S3 Buckets](./results/s3Buckets.png)
+![CloudFront Distributions](./results/CloudFrontDistributions.png)
+![CloudFormation Stack](./results/CloudFormationStack.png)
+
 ## Available Scripts
 
 In the project directory, you can run:  
