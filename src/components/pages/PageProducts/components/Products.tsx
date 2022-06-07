@@ -36,6 +36,7 @@ export default function Products() {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
+    // add server api here
     // axios.get(`${API_PATHS.bff}/product/available/`)
     //   .then(res => setProducts(res.data));
     setProducts(productList);
