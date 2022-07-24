@@ -33,32 +33,27 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
     const authorization_token = localStorage.getItem('authorization_token');
 
     // Get the presigned URL
-    try {
-      const response = await axios({
-        method: 'GET',
-        url: `${url}/${encodeURIComponent(file.name)}`,
-        params: {
-          name: encodeURIComponent(file.name)
-        },
-        headers: {
-          Authorization: 'Basic ' + authorization_token
-        }
-      })
+    const response = await axios({
+      method: 'GET',
+      url: `${url}/${encodeURIComponent(file.name)}`,
+      params: {
+        name: encodeURIComponent(file.name)
+      },
+      headers: {
+        Authorization: authorization_token ? 'Basic ' + authorization_token : ''
+      }
+    })
 
-      console.log('File to upload: ', file.name)
-      console.log('Uploading to: ', response.data.signedUrl)
-      const result = await fetch(response.data.signedUrl, {
-        method: 'PUT',
-        body: file
-      })
-      console.log('Result: ', result)
-      setFile('');
-    }
-    catch (e) {
-      console.log(JSON.stringify(e))
-    }
+    console.log('File to upload: ', file.name)
+    console.log('Uploading to: ', response.data.signedUrl)
+    const result = await fetch(response.data.signedUrl, {
+      method: 'PUT',
+      body: file
+    })
+
+    console.log('Result: ', result)
+    setFile('');
   }
-    ;
 
   return (
     <div className={classes.content}>
