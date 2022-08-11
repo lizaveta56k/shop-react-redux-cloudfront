@@ -16,6 +16,12 @@ axios.interceptors.response.use(
     if (error?.response?.status === 400) {
       alert(error.response.data?.data);
     }
+    else if (error?.response?.status === 401) {
+      alert('401 Unauthorized : Authorization required');
+    } 
+    else if (error?.response?.status === 403) {
+      alert('403 Forbidden : You do not have permissions to access this server.');
+    }
 
     return Promise.reject(error?.response ?? error);
   }
